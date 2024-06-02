@@ -1,0 +1,715 @@
+/** @format */
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  font-size: 14px;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #212529;
+  height: 200rem;
+  color: #fff;
+}
+h1,
+h2,
+h3,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  font-size: 3rem;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: #fff;
+}
+a:hover {
+  text-decoration: none;
+}
+body {
+  color: #26313c;
+  line-height: 1.5;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+/*--------------*/
+/*menu*/
+/*---------------*/
+.header {
+  position: relative;
+  transition: all 0.7s;
+  z-index: 999;
+}
+.header .wrap {
+  width: 114rem;
+  max-width: 100%;
+  margin: auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.header.sticky {
+  width: 100%;
+  position: fixed;
+  background-color: rgba(0,125,60, 0.9);
+  background-image: linear-gradient(
+    315deg,
+    rgba(26,174,92, 0.9) 0%
+  );
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.35);
+}
+.header .logo {
+  margin: 0;
+  padding: 1.6rem 0;
+}
+.header .logo a,
+.header .logo a img {
+  display: block;
+  width: 200px;
+}
+.header .menu ul {
+  display: flex;
+}
+.header .menu li {
+  padding: 1.6rem;
+}
+.header .menu a {
+  font-size: 1.4rem;
+  color: white;
+  padding: 1rem;
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.header .menu a:hover {
+  color: #ff0000;
+  font-weight: bolder;
+}
+/*--------------*/
+/*menu resposive*/
+/*---------------*/
+.header .sidemenu-toggler {
+  position: absolute;
+  width: 4rem;
+  padding: 6px;
+  top: 2.3rem;
+  right: 4rem;
+}
+.header .sidemenu-toggler > span {
+  display: block;
+  background-color: white;
+  height: 2px;
+}
+.header .sidemenu-toggler > span:nth-child(2) {
+  margin: 4px 0 4px auto;
+  width: 75%;
+  transition: 0.3s all;
+}
+.header .sidemenu-toggler > span:nth-child(3) {
+  margin-left: auto;
+  width: 50%;
+  transition: 0.6s all;
+}
+.header .sidemenu-toggler:hover > span:nth-child(2),
+.header .sidemenu-toggler:hover > span:nth-child(3) {
+  width: 100%;
+}
+
+.header .sidemenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #007D3C;
+  background-image: linear-gradient(315deg, rgb(126, 235, 206) 0%, #007D3C 74%);
+  width: 40%;
+  height: 100vh;
+  z-index: 999;
+  padding: 4rem;
+  color: white;
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.header .sidemenu.active {
+  transform: translate3d(0, 0, 0);
+}
+.header .sidemenu .close {
+  height: 3rem;
+  width: 3rem;
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 24px;
+}
+.header .sidemenu .close::before,
+.header .sidemenu .close::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 13px;
+  height: 28px;
+  width: 2px;
+  background: white;
+}
+.header .sidemenu .close::before {
+  transform: rotate(45deg);
+}
+.header .sidemenu .close::after {
+  transform: rotate(-45deg);
+}
+.header .sidemenu nav ul {
+  padding-top: 3rem;
+}
+.header .sidemenu nav li {
+  padding: 15px 0;
+}
+.header .sidemenu nav a {
+  font-size: 1.3rem;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.header .sidemenu nav a:hover {
+  color: #25d366;
+  text-decoration: underline;
+}
+.header .sidemenu footer {
+  padding-top: 100px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+/*--------------*/
+/*footer-menu-social*/
+/*---------------*/
+.header .sidemenu footer .social {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.header .sidemenu footer .social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  transition: all 0.3s linear;
+  margin-right: 5px;
+  text-transform: uppercase;
+}
+/*--------------*/
+/*mediaqeris menu*/
+/*---------------*/
+@media (max-width: 767px) {
+  .header .sidemenu {
+    width: 100%;
+  }
+  .header .sidemenu nav a {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .header .sidemenu {
+    width: 70%;
+  }
+  .header .sidemenu nav a {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 1199px) {
+  .header .menu {
+    display: none;
+  }
+}
+
+/*--------------*/
+/*header*/
+/*---------------*/
+
+.title {
+  background-color: #007D3C;
+  color: #fff;
+  font-size: 3.3rem;
+  line-height: 24px;
+  padding: 1rem 3rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 0;
+  margin-bottom: 20px;
+}
+.name {
+  margin-top: 10px;
+  font-size: 2.6rem;
+}
+@media (min-width: 768px) {
+  .name {
+    font-size: 6.5rem;
+    letter-spacing: -1px;
+  }
+}
+
+.designation {
+  font-size: 3rem;
+}
+.email {
+  margin-top: 4rem !important;
+  color: #007D3C;
+}
+.email a {
+  color: #007D3C;
+  font-size: 2rem;
+}
+.social-icons li {
+  list-style: none;
+  margin-right: 3rem;
+  margin-top: 4rem;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.fa-linkedin:hover {
+  color: #0e67a8;
+}
+.fa-github:hover {
+  color: #171515;
+  background-color: #fff;
+}
+.fa-whatsapp:hover {
+  color: #25d366;
+}
+.fa-angle-up {
+  font-size: 25px;
+  border: 2px solid white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  line-height: 40px;
+}
+
+.fa-angle-up:hover {
+  color: #007D3C;
+}
+::-webkit-scrollbar {
+  width: 1rem;
+}
+::-webkit-scrollbar-track {
+  width: 1rem;
+  background-color: #212529;
+  border-left: 0 solid white;
+  border-right: 0 solid white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #007D3C;
+  width: 0;
+  height: 35%;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+/*--------------*/
+/*Acerca de*/
+/*---------------*/
+.acercade{
+  margin: 6rem 0;
+  padding: 6rem 0;
+}
+.img-acerca {
+  margin-top: 6rem;
+}
+.titus {
+  margin: 6rem 0;
+  text-align: center;
+}
+.gap {
+  margin-bottom: 5rem;
+}
+.tab ul li {
+  margin: 0px 6px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 4px 0;
+  display: inline-block;
+}
+.tab ul li span {
+  border: 1px solid #007D3C;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.tab ul li span:hover {
+  background-color: transparent !important;
+}
+.btn-danger {
+  background-color: #007D3C;
+  color: #212529;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 5rem;
+  font-size: 1.8rem;
+}
+.btn-danger:hover, .btn-danger:active {
+  background-color: #007D3C;
+  border-color: none;
+  color: #fff;
+}
+
+/*--------------*/
+/*Servicios*/
+/*---------------*/
+.mh-service .mh-service-item {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  color: #fff;
+}
+.mh-service .principal{
+  list-style: circle;
+}
+.mh-service .secundaria{
+  list-style: square inside;
+}
+.mh-service .mh-service-item .bi {
+  margin-bottom: 2rem;
+  margin-top: 1.6rem;
+}
+.mh-service h3 {
+  margin-bottom: 2rem;
+  font-size: 2.8rem;
+  line-height: 3rem;
+}
+
+/*--------------*/
+/*Habilidades*/
+/*---------------*/
+.mh-skills .mh-professional-skill {
+  padding-right: 6rem;
+  color: #fff;
+}
+.mh-skills .mh-professional-skill h2 {
+  line-height: 4rem;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 6rem;
+}
+.mh-professional-skills {
+  padding-left: 20%;
+  color: #fff;
+}
+.mh-professional-skills h2 {
+  line-height: 4rem;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 6rem;
+  color: #fff;
+}
+.mh-professional-progress{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.mh-professional-progress li {
+  display: inline-block;
+  margin: 0 auto;
+  float: none;
+  width: 48%;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.mh-progress {
+  margin-bottom: 1rem;
+  font: 900 1.14285/1 Cinzerl, cursive;
+  color: #fff;
+}
+.mh-progress .progressbar-text {
+  color: inherit !important;
+}
+.progress.progress-line {
+  height: 1rem;
+  margin-right: 6rem;
+}
+.progress.progress-line .progress-text {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 6rem;
+  transform: translateY(0.35%);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .mh-skills .mh-professional-skill {
+    padding: 0;
+    margin: 0 auto;
+  }
+  .mh-professional-skills {
+    padding: 0;
+    margin: 5rem 0 0 0;
+  }
+  .mh-professional-progress {
+    margin: auto;
+  }
+  .mh-progress-circle {
+    padding: 0 0.5rem;
+  }
+  .pr-skill-name {
+    padding: 0 0.5rem;
+  }
+}
+
+.mh-progress.mh-progress-circle {
+  display: inline-block;
+  width: 10rem;
+  height: 10rem;
+}
+.mh-progress path:nth-child(1) {
+  stroke: rgba(0, 0, 0, 0.7);
+}
+.mh-progress path:nth-child(2) {
+  stroke: #007D3C;
+}
+.pr-skill-name {
+  color: #fff;
+  padding: 0 0.5rem;
+}
+.candidatos {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.candidatos .parcial {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+.candidatos .parcial.info {
+  position: relative;
+}
+.candidatos .parcial .info .nome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+.candidatos .parcial .info .percentage-num {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+.candidatos .parcial .progressBar {
+  position: relative;
+  width: 100%;
+  height: 7px;
+  margin: 3.9rem 0 0.2rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.candidatos .parcial .percentagem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8px;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: #007D3C;
+  transition: 3s all;
+  animation-duration: 3s;
+  animation-name: animationProgress;
+}
+@keyframes animationProgress {
+  from {
+    width: 0;
+  }
+}
+/*--------------*/
+/*portafolio*/
+/*---------------*/
+.secttion-title h2 {
+  color: #fff;
+  margin: 3rem 0;
+}
+
+.portafolio-nav {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.portafolio-nav ul {
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .portafolio-nav ul li {
+    margin: 0 10px;
+  }
+}
+.portafolio-nav ul li {
+  display: inline-block;
+  margin: 5px 10px;
+  cursor: pointer;
+  color: #fff;
+  text-transform: capitalize;
+}
+.portafolio-nav ul li:hover,
+.portafolio-nav ul li.active {
+  color: #007D3C;
+}
+.portafolio-nav ul li span {
+  padding: 1.5rem 0 0 0;
+  border-bottom: 2px solid transparent;
+}
+
+.portafolio-nav ul li.current span {
+  border-bottom: 2px solid #007D3C;
+}
+
+.tabla table {
+  border-collapse: collapse;
+  border: 4px solid #007D3C;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+td,
+th {
+  border: 2px solid #007D3C;
+  padding: 10px 20px;
+}
+
+th {
+  background-color: transparent;
+}
+
+td {
+  text-align: start;
+}
+
+tr:nth-child(even) td {
+  background-color: transparent;
+}
+
+tr:nth-child(odd) td {
+  background-color: transparent;
+}
+
+caption {
+  padding: 10px;
+}
+
+tbody {
+  font-size: 90%;
+}
+.listas{
+  list-style:square inside;
+}
+
+.mh-project-gallery .title {
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  text-transform: capitalize;
+  margin-top: 3rem;
+  background-color: transparent;
+  color: #fff;
+}
+figcaption .sub-title {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  font-size: 1.3rem;
+  letter-spacing: 0px;
+}
+
+
+.footer {
+  border-top: #007D3C solid 1px;
+}
+.footer .social-icons li {
+  margin: auto;
+}
+
+/* contacto */
+.contact{
+  margin: 5rem 0;
+  color: #fff;
+  padding: 5rem 0;
+}
+.form {
+  max-inline-size: 550px;
+  margin: auto;
+}
+.form label {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: .5em;
+  padding-inline-start: .5em;
+}
+
+.form label span {
+  color: #007D3C;
+}
+
+.form input,
+.form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1rem;
+  padding: .8em;
+  border-radius: .5em;
+  border: 2px solid transparent; 
+  border-image: linear-gradient(to bottom, rgb(140, 239, 102) 0%, #007D3C 74%) 1; 
+  color: #007D3C;
+  background-color: transparent;
+}
+
+.form textarea {
+  margin-block-end: 2em;
+  font-family: inherit;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to bottom, rgbrgb(140, 239, 102) 0%, #007D3C 74%) 1;
+}
+
+input::-webkit-input-placeholder {
+  color: #007D3C;
+}
+
+
+.contact {
+  margin-block-end: 5em;
+}
+
+#enlace {
+  opacity: 0;
+}
+.footer .logo{
+  width: 200px;
+}
