@@ -695,7 +695,7 @@ figcaption .sub-title {
   margin-block-end: 2em;
   font-family: inherit;
   border: 2px solid transparent;
-  border-image: linear-gradient(to bottom, rgbrgb(140, 239, 102) 0%, #007D3C 74%) 1;
+  border-image: linear-gradient(to bottom, rgb(140, 239, 102) 0%, #007D3C 74%) 1;
 }
 
 input::-webkit-input-placeholder {
